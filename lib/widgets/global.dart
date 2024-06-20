@@ -44,25 +44,26 @@ TextFormField foodieSufixPrefixFormField(
         onPressed: showPass,
       ),
       suffixIcon: IconButton(
-        icon: Image.asset("assets/images/filter.png"),
+        icon: Image.asset("assets/images/filter.png", height: _screenHeight * .0248,),
         onPressed: showPass,
+
       ),
       border: InputBorder.none,
       filled: true,
-      fillColor: inputBackgroundColor,
+      fillColor: appWhite,
       focusColor: inputBorderColor,
       hintText: hintText,
       hintStyle: GoogleFonts.poppins(
           color: appColorPrimary, fontSize: _screenHeight * .017),
       focusedBorder: const OutlineInputBorder(
-          borderRadius: BorderRadius.zero,
+          borderRadius: BorderRadius.all(Radius.circular(10)),
           borderSide: BorderSide(color: inputBorderColor, width: 1)),
       enabledBorder: const OutlineInputBorder(
-          borderRadius: BorderRadius.zero,
+          borderRadius: BorderRadius.all(Radius.circular(10),),
           borderSide: BorderSide(
               color: iconColorSecondary, style: BorderStyle.solid, width: 1)),
       errorBorder: const OutlineInputBorder(
-          borderRadius: BorderRadius.zero,
+          borderRadius: BorderRadius.all(Radius.circular(10)),
           borderSide: BorderSide(
               color: iconColorSecondary, style: BorderStyle.solid, width: 1)),
     ),
@@ -101,6 +102,64 @@ Widget foodieSubmitButton(BuildContext context, Function()? onTap, String title)
   );
 }
 
+
+Widget foodieRoundIconButton(BuildContext context, Function()? onTap, String title, {double? width}) {
+  final screenWidth = MediaQuery.of(context).size.width;
+  return SizedBox(
+    width: width ?? screenWidth * 0.9,
+    height: 45.0,
+    child: ElevatedButton.icon(
+      onPressed: onTap,
+      style: ElevatedButton.styleFrom(
+        padding: const EdgeInsets.all(0), backgroundColor: appColorPrimary,
+        textStyle: const TextStyle(
+          color: Colors.white,
+        ), // background
+        shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(20)
+        ),
+      ),
+      icon: CircleAvatar(
+        backgroundColor: appWhite,
+        radius: 15,
+        child: IconButton(
+          padding: EdgeInsets.zero,
+          icon: const Icon(Icons.shopping_basket_sharp),
+          color: appColorPrimary,
+          onPressed: () {},
+        ),
+      ), //const Icon(Icons.shopping_basket_sharp, color: appWhite,),
+      label: Text(
+        title,
+        style: GoogleFonts.poppins(color: Colors.white, fontSize: 18, fontWeight: FontWeight.bold),
+      ),
+    ),
+  );
+}
+
+Widget foodieRoundButton(BuildContext context, Function()? onTap, String title, {double? width}) {
+  final screenWidth = MediaQuery.of(context).size.width;
+  return SizedBox(
+    width: width ?? screenWidth * 0.9,
+    height: 45.0,
+    child: ElevatedButton(
+      onPressed: onTap,
+      style: ElevatedButton.styleFrom(
+        padding: const EdgeInsets.all(0), backgroundColor: appColorPrimary,
+        textStyle: const TextStyle(
+          color: Colors.white,
+        ), // background
+        shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(20)
+        ),
+      ),
+      child: Text(
+        title,
+        style: GoogleFonts.poppins(color: Colors.white, fontSize: 18, fontWeight: FontWeight.bold),
+      ),
+    ),
+  );
+}
 
 Widget foodieBlackButton(BuildContext context, Function()? onTap, String title) {
   final screenWidth = MediaQuery.of(context).size.width;

@@ -3,7 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 
 import '../utils/colors.dart';
 import '../utils/next_screen.dart';
-import 'dashboard.dart';
+import 'bottom_navigation.dart';
 
 class SuccessScreen extends StatefulWidget {
   const SuccessScreen({super.key});
@@ -42,7 +42,7 @@ class _SuccessScreenState extends State<SuccessScreen> {
               ),
               Center(
                 child: GestureDetector(
-                  onTap: (){nextScreen(context, const Dashboard());},
+                  onTap: (){nextScreen(context, const BottomNavigation());},
                   child: Container(
                     height: _screenHeight * 0.06,
                     width: _screenWidth * 0.7,

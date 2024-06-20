@@ -11,7 +11,7 @@ class AppThemeData {
   AppThemeData._();
 
   static final ThemeData lightTheme = ThemeData(
-    scaffoldBackgroundColor: const Color(0xFFF0F0FF),
+    scaffoldBackgroundColor: appWhite,
     primaryColor: appColorPrimary,
     primaryColorDark: const Color(0xFF1E1E1E),
     highlightColor: appTextColorSecondary,
