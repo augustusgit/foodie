@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:foodie/screen/sign_in.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../utils/colors.dart';
 import '../utils/next_screen.dart';
-import 'bottom_navigation.dart';
 
 class SuccessScreen extends StatefulWidget {
   const SuccessScreen({super.key});
@@ -42,7 +42,7 @@ class _SuccessScreenState extends State<SuccessScreen> {
               ),
               Center(
                 child: GestureDetector(
-                  onTap: (){nextScreen(context, const BottomNavigation());},
+                  onTap: (){nextScreen(context, const SignIn());},
                   child: Container(
                     height: _screenHeight * 0.06,
                     width: _screenWidth * 0.7,

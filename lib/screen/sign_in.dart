@@ -3,7 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../utils/colors.dart';
+import '../utils/next_screen.dart';
 import '../widgets/global.dart';
+import 'bottom_navigation.dart';
 
 class SignIn extends StatefulWidget {
   const SignIn({super.key});
@@ -88,112 +90,6 @@ class _SignInState extends State<SignIn> {
                 height: _screenHeight * 0.05,
               ),
               fragments[groupValue],
-              // buildTextField(
-              //   context,
-              //   nameCont,
-              //   "Masukkan Email",
-              // ),
-              // SizedBox(
-              //   height: _screenHeight * 0.04,
-              // ),
-              // buildTextField(
-              //   context,
-              //   passCont,
-              //   "Kata Sandi",
-              // ),
-              // Row(
-              //   mainAxisAlignment: MainAxisAlignment.end,
-              //   children: [
-              //     Text("Lupa Password?", style: GoogleFonts.poppins(
-              //       fontSize: _screenHeight * .015,
-              //       color: iconColorPrimary,
-              //       fontWeight: FontWeight.w400,
-              //     ),),
-              //   ],
-              // ),
-              // SizedBox(
-              //   height: _screenHeight * 0.04,
-              // ),
-              // foodieSubmitButton(
-              //     context, () => {
-              //       // nextScreen(context, const OTPScreen())
-              // },
-              //     "Login",
-              // ),
-              // SizedBox(
-              //   height: _screenHeight * 0.02,
-              // ),
-              // Row(
-              //   children: [
-              //     Image.asset("assets/images/dividerline.png", width: 115,),
-              //     SizedBox(
-              //       width: _screenWidth * 0.02,
-              //     ),
-              //     Text(
-              //       "Atau Melalui",
-              //       style: GoogleFonts.poppins(
-              //         color: appBackgroundColorDark,
-              //         fontSize: _screenHeight * .015,
-              //       ),
-              //     ),
-              //     SizedBox(
-              //       width: _screenWidth * 0.02,
-              //     ),
-              //     Image.asset("assets/images/dividerline.png", width: 115,),
-              //   ],
-              // ),
-              //
-              // SizedBox(
-              //   height: _screenHeight * 0.06,
-              // ),
-              // Row(
-              //   mainAxisAlignment: MainAxisAlignment.center,
-              //   children: [
-              //     Image.asset("assets/icons/google.png", width: 25,),
-              //     SizedBox(
-              //       width: _screenWidth * 0.02,
-              //     ),
-              //     Text(
-              //       "Google",
-              //       style: GoogleFonts.poppins(
-              //         color: appBackgroundColorDark,
-              //         fontWeight: FontWeight.bold,
-              //         fontSize: _screenHeight * .02,
-              //       ),
-              //     ),
-              //   ],
-              // ),
-              //
-              // SizedBox(
-              //   height: _screenHeight * 0.06,
-              // ),
-              // Row(
-              //   mainAxisAlignment: MainAxisAlignment.center,
-              //   children: [
-              //     RichText(
-              //       text: TextSpan(
-              //         children: [
-              //           TextSpan(
-              //             text: 'Sudah Punya Akun ? ',
-              //             style: GoogleFonts.poppins(
-              //               fontSize: _screenHeight * .02,
-              //               color: appTextColorPrimary,
-              //               fontWeight: FontWeight.w400,
-              //             ),
-              //           ),
-              //           TextSpan(
-              //             text: 'Login',
-              //             style: GoogleFonts.poppins(
-              //               fontSize: _screenHeight * .02,
-              //               color: appColorPrimary,
-              //               fontWeight: FontWeight.w400,
-              //             ),
-              //           ),
-              //         ],
-              //       ),
-              //     ),
-              //   ],
-              // ),
             ],
           ),
         ),
@@ -241,7 +137,7 @@ class _SignInState extends State<SignIn> {
         ),
         foodieSubmitButton(
           context, () => {
-          // nextScreen(context, const OTPScreen())
+        nextScreen(context, const BottomNavigation()),
         },
           "Login",
         ),
@@ -341,7 +237,7 @@ class _SignInState extends State<SignIn> {
 
         foodieSubmitButton(
           context, () => {
-          // nextScreen(context, const OTPScreen())
+        nextScreen(context, const BottomNavigation()),
         },
           "Kirim Kode UTP",
         ),
